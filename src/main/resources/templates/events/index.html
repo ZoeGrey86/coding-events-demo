@@ -9,10 +9,16 @@
     <thead>
         <tr>
             <th>Name</th>
+            <th>Description</th>
+            <th>Id</th>
+            <th>Edit</th>
         </tr>
     </thead>
     <tr th:each="event : ${events}">
         <td th:text="${event.name}"></td>
+        <td th:text="${event.description}"></td>
+        <td th:text="${event.id}"></td>
+        <td><a class="nav-link" th:href="@{/events/edit/{id}(id=${event.id})}" >Edit Event</a></td>
     </tr>
 </table>
 
